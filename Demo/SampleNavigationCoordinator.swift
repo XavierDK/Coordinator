@@ -11,23 +11,7 @@ import Coordinator
 
 final class SampleNavigationCoordinator: NavigationCoordinator {
   
-  var controller: UIViewController?
-  
-  let context: Context
-  let navigationController: UINavigationController
-  var parentCoordinator: Coordinator?
-  var childCoordinators: [Coordinator] = []
-  
-  required init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
-    
-    self.navigationController = navigationController
-    self.parentCoordinator = parentCoordinator
-    self.context = context
-    
-    setup()
-  }
-  
-  func setup() {
+  override func setup() {
     
     controller = UIStoryboard(name: "SampleViewController", bundle: nil).instantiateInitialViewController()
     
@@ -36,12 +20,12 @@ final class SampleNavigationCoordinator: NavigationCoordinator {
       guard let strongSelf = self else { return }
       
       let coord: Coordinator
-      if arc4random() % 2 == 0 {
+//      if arc4random() % 2 == 0 {
         coord = SampleNavigationCoordinator(navigationController: strongSelf.navigationController, parentCoordinator: strongSelf, context: strongSelf.context)
-      }
-      else {
-        coord = SampleModalCoordinator(navigationController: strongSelf.navigationController, parentCoordinator: strongSelf, context: strongSelf.context)
-      }
+//      }
+//      else {
+//        coord = SampleModalCoordinator(navigationController: strongSelf.navigationController, parentCoordinator: strongSelf, context: strongSelf.context)
+//      }
       self?.startChild(forCoordinator: coord)
     }
     

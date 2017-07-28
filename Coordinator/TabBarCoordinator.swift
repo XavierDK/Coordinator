@@ -8,16 +8,36 @@
 
 import Foundation
 
-public protocol TabBarCoordinator: Coordinator {
+open class TabBarCoordinator: Coordinator {
   
-  var tabBarController: UITabBarController { get }
-  var tabs: [Coordinator.Type] { get }
+  public var controller: UIViewController?
+  
+  public let context: Context
+  public let navigationController: UINavigationController
+  public weak var parentCoordinator: Coordinator?
+  public var childCoordinators: [Coordinator] = []
+  
+  public let tabBarController = UITabBarController()
+  public var tabs: [Coordinator.Type] = []
+  
+  required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
+    
+    self.navigationController = navigationController
+    self.parentCoordinator = parentCoordinator
+    self.context = context
+  }
+  
+  open func setup() {
+    
+    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  }
 }
 
 public extension TabBarCoordinator {
   
   func start(withCallback completion: CoordinatorCallback? = nil) {
     
+    setup()
     navigationController.setNavigationBarHidden(true, animated: false)
     tabBarController.viewControllers = tabs.map { childCoordinator in
       

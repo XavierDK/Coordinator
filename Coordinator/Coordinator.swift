@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 /// A callback function used by coordinators to signal events.
 public typealias CoordinatorCallback = (Coordinator) -> Void
@@ -30,13 +32,14 @@ public protocol Coordinator: class {
   var navigationController: UINavigationController { get }
   
   /// The optionnal parent coordinator
-  var parentCoordinator: Coordinator? { get set }
+  weak var parentCoordinator: Coordinator? { get }
   
   // All the children of the coordinator are retained here.
   var childCoordinators: [Coordinator] { get set }
   
   /// Force a uniform initializer on our implementors.
   init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context)
+  
   
   /// Tells the coordinator to create its initial view controller and take over the user flow.
   func start(withCallback completion: CoordinatorCallback?)
@@ -92,6 +95,16 @@ public extension Coordinator {
   }
   
   func startChild(forCoordinator coordinator: Coordinator, callback: CoordinatorCallback? = nil) {
+    
+    Observable<Int>.interval(5, scheduler: SerialDispatchQueueScheduler(qos: .default))
+      .filter({ [weak controller] _ in (controller?.isViewLoaded ?? false && controller?.view.window != nil) })
+      .observeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak coordinator] _ in
+        
+        guard let coordinator = coordinator else { return }        
+        coordinator.stopFromParent()
+      })
+//    .addDisposableTo(disposeBag)
     
     childCoordinators.append(coordinator)
     coordinator.start(withCallback: callback)

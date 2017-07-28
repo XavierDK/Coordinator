@@ -11,24 +11,13 @@ import Coordinator
 
 final class SampleModalCoordinator: ModalCoordinator {
   
-  var controller: UIViewController?
+//  override func start(withCallback completion: CoordinatorCallback? = nil) {
+//    
+//    setup()
+//    super.start(withCallback: completion)
+//  }
   
-  let context: Context
-  let parentNavigationController: UINavigationController
-  let navigationController = UINavigationController()
-  var parentCoordinator: Coordinator?
-  var childCoordinators: [Coordinator] = []
-  
-  required init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
-    
-    self.context = context
-    self.parentCoordinator = parentCoordinator
-    self.parentNavigationController = navigationController
-    
-    setup()
-  }
-  
-  func setup() {
+  override func setup() {
     
     controller = UIStoryboard(name: "SampleViewController", bundle: nil).instantiateInitialViewController()
     

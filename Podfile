@@ -6,6 +6,10 @@ target 'Coordinator' do
   use_frameworks!
 
   # Pods for Coordinator
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Action'
 
   target 'CoordinatorTests' do
     inherit! :search_paths

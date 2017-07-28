@@ -14,23 +14,7 @@ import Coordinator
 /// This type of coordinator is used to manage a TabBarController
 final class AppCoordinator: TabBarCoordinator {
   
-  var controller: UIViewController?
-  
-  let context: Context
-  let navigationController: UINavigationController
-  var parentCoordinator: Coordinator?
-  var childCoordinators: [Coordinator] = []
-  
-  /// The TabBarController
-  let tabBarController = UITabBarController()
-  
-  /// The coordinators array used to fill the tabBar
-  let tabs: [Coordinator.Type] = [SampleNavigationCoordinator.self, SampleNavigationCoordinator.self, SampleNavigationCoordinator.self]
-  
-  required init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
-    
-    self.navigationController = navigationController
-    self.parentCoordinator = parentCoordinator
-    self.context = context
+  override func setup() {
+    tabs = [SampleNavigationCoordinator.self, SampleNavigationCoordinator.self, SampleNavigationCoordinator.self]
   }
 }

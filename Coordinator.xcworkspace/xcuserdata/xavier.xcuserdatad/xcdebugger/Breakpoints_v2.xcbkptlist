@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coordinator/NavigationCoordinator.swift"
+            timestampString = "522950965.188554"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "stop(withCallback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coordinator.NavigationCoordinator.stop (withCallback : Swift.Optional&lt;(Coordinator.Coordinator) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Coordinator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xavier/Projets/Coordinator/Coordinator/NavigationCoordinator.swift"
+                  timestampString = "522950965.4946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coordinator.NavigationCoordinator.stop (withCallback : Swift.Optional&lt;(Coordinator.Coordinator) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Coordinator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xavier/Projets/Coordinator/Coordinator/NavigationCoordinator.swift"
+                  timestampString = "522950965.495926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coordinator/Coordinator.swift"
+            timestampString = "522950998.711928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "startChild(forCoordinator:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

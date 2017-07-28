@@ -8,14 +8,34 @@
 
 import Foundation
 
-public protocol ModalCoordinator: Coordinator {
-
-  var parentNavigationController: UINavigationController { get }
+open class ModalCoordinator: Coordinator {
+  
+  public var controller: UIViewController?
+  
+  public let context: Context
+  public let parentNavigationController: UINavigationController
+  public let navigationController = UINavigationController()
+  public weak var parentCoordinator: Coordinator?
+  public var childCoordinators: [Coordinator] = []
+  
+  required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
+    
+    self.context = context
+    self.parentCoordinator = parentCoordinator
+    self.parentNavigationController = navigationController
+  }
+  
+  open func setup() {
+    
+    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  }
 }
 
-public extension ModalCoordinator {
+extension ModalCoordinator {
   
-  func start(withCallback completion: CoordinatorCallback? = nil) {
+  public func start(withCallback completion: CoordinatorCallback? = nil) {
+    
+    setup()
     
     guard let controller = controller else { return }
     
@@ -26,9 +46,12 @@ public extension ModalCoordinator {
     completion?(self)
   }
   
-  func stop(withCallback completion: CoordinatorCallback? = nil) {
+  public func stop(withCallback completion: CoordinatorCallback? = nil) {
     
-    navigationController.dismiss(animated: true)
+    if let _ = controller,
+      parentNavigationController.presentedViewController == navigationController {
+      navigationController.dismiss(animated: true)
+    }
     completion?(self)
   }
 }

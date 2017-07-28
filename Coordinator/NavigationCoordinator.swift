@@ -8,14 +8,36 @@
 
 import Foundation
 
-public protocol NavigationCoordinator: Coordinator {}
+open class NavigationCoordinator: Coordinator {
+  
+  public var controller: UIViewController?
+  
+  public let context: Context
+  public let navigationController: UINavigationController
+  public weak var parentCoordinator: Coordinator?
+  public var childCoordinators: [Coordinator] = []
+  
+  required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
+    
+    self.context = context
+    self.parentCoordinator = parentCoordinator
+    self.navigationController = navigationController
+  }
+  
+  open func setup() {
+    
+    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  }
+}
 
 public extension NavigationCoordinator {
   
   func start(withCallback completion: CoordinatorCallback? = nil) {
     
+    setup()
+    
     guard let controller = controller else { return }
-        
+    
     navigationController.tabBarItem = controller.tabBarItem
     navigationController.pushViewController(controller, animated: true)
     completion?(self)
@@ -23,7 +45,10 @@ public extension NavigationCoordinator {
   
   func stop(withCallback completion: CoordinatorCallback? = nil) {
     
-    navigationController.popViewController(animated: true)
+    if let controller = controller,
+      navigationController.viewControllers.contains(controller) {
+      navigationController.popViewController(animated: true)
+    }
     completion?(self)
   }
 }

@@ -25,12 +25,14 @@ final class SampleViewController: UIViewController {
   }
   
   @IBAction func actionPressed(sender: UIButton) {
-    
     action?()
   }
   
   @IBAction func closePressed(sender: UIButton) {
-    
     stop?()
+  }
+  
+  deinit {
+    print("DEINIT")
   }
 }
