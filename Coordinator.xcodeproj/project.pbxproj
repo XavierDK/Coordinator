@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		252F7D221F2A45B8003B45FC /* SampleModalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252F7D211F2A45B8003B45FC /* SampleModalCoordinator.swift */; };
+		252F7D241F2F35C0003B45FC /* CoordinatorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252F7D231F2F35C0003B45FC /* CoordinatorConfiguration.swift */; };
 		255DD32C1F29D950003C7003 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255DD3221F29D950003C7003 /* Coordinator.framework */; };
 		255DD3311F29D950003C7003 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255DD3301F29D950003C7003 /* CoordinatorTests.swift */; };
 		255DD3331F29D950003C7003 /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 255DD3251F29D950003C7003 /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		252F7D211F2A45B8003B45FC /* SampleModalCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleModalCoordinator.swift; sourceTree = "<group>"; };
+		252F7D231F2F35C0003B45FC /* CoordinatorConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorConfiguration.swift; sourceTree = "<group>"; };
 		255DD3221F29D950003C7003 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		255DD3251F29D950003C7003 /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
 		255DD3261F29D950003C7003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				255DD3251F29D950003C7003 /* Coordinator.h */,
 				255DD3261F29D950003C7003 /* Info.plist */,
 				255DD3541F29E2AD003C7003 /* Context.swift */,
+				252F7D231F2F35C0003B45FC /* CoordinatorConfiguration.swift */,
 				255DD3521F29DD5B003C7003 /* Coordinator.swift */,
 				255DD3701F2A3287003C7003 /* TabBarCoordinator.swift */,
 				255DD37A1F2A39A6003C7003 /* ModalCoordinator.swift */,
@@ -507,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				252F7D241F2F35C0003B45FC /* CoordinatorConfiguration.swift in Sources */,
 				255DD37B1F2A39A6003C7003 /* ModalCoordinator.swift in Sources */,
 				255DD3531F29DD5B003C7003 /* Coordinator.swift in Sources */,
 				255DD3551F29E2AD003C7003 /* Context.swift in Sources */,

@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import Coordinator
+import RxSwift
+import RxCocoa
+import Action
 
 final class SampleViewController: UIViewController {
   
   var action: (() -> ())?
-  var stop: (() -> ())?
+  var stop: Action<Void, Coordinator>?
+  
+  let disposeBag = DisposeBag()
+  
+  @IBOutlet weak var closeButton: UIBarButtonItem!
   
   override func viewDidLoad() {
     
     super.viewDidLoad()
     
+    print("=> ✅ Setup of \(self)")
+    
     view.backgroundColor = UIColor(hue: CGFloat(drand48()), saturation: 1, brightness: 1, alpha: 1)
     
     if navigationController?.viewControllers.first === self && !(navigationController!.isBeingPresented) {
       navigationItem.rightBarButtonItem = nil
+    }
+    
+    setupButtons()
+  }
+  
+  func setupButtons() {
+    
+    if let stop = stop {
+      closeButton.rx.tap
+        .bind(to: stop.inputs)
+        .addDisposableTo(disposeBag)
     }
   }
   
@@ -28,11 +49,7 @@ final class SampleViewController: UIViewController {
     action?()
   }
   
-  @IBAction func closePressed(sender: UIButton) {
-    stop?()
-  }
-  
   deinit {
-    print("DEINIT")
+    print("=> ❌ Deinit of \(self)")
   }
 }

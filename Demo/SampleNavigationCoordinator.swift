@@ -8,12 +8,15 @@
 
 import Foundation
 import Coordinator
+import Action
 
 final class SampleNavigationCoordinator: NavigationCoordinator {
   
   override func setup() {
     
     controller = UIStoryboard(name: "SampleViewController", bundle: nil).instantiateInitialViewController()
+    
+    print("=> ❇️ Setup of \(self) containing controller: \(String(describing: controller!))")
     
     let action: () -> () = { [weak self] in
 
@@ -24,12 +27,29 @@ final class SampleNavigationCoordinator: NavigationCoordinator {
       else {
         coordType = SampleModalCoordinator.self
       }
-      self?.startChildCoordinator(forType: coordType)
+      
+      let config = CoordinatorConfiguration(type: coordType)
+      self?.startChildCoordinator(forConfiguration: config)
     }
     
     if let controller = controller as? SampleViewController {
       controller.action = action
-      controller.stop = stopBlock
+      
+      let stop = stopChildAction
+      stop.elements
+        .subscribe(onNext: { coord in
+          
+          print("=> 🛑 Stop as been asked for \(coord)")
+        })
+        .addDisposableTo(disposeBag)
+      
+      controller.stop = stop
+    }
+  }
+  
+  deinit {
+    if let controller = controller {
+      print("=> ⭕️ Deinit of \(self) containing controller: \(String(describing: controller))")
     }
   }
 }
