@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 open class NavigationCoordinator: Coordinator {
   
@@ -17,6 +18,8 @@ open class NavigationCoordinator: Coordinator {
   public weak var parentCoordinator: Coordinator?
   public var childCoordinators: [Coordinator] = []
   
+  public let disposeBag = DisposeBag()
+  
   required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
     
     self.context = context
@@ -25,7 +28,6 @@ open class NavigationCoordinator: Coordinator {
   }
   
   open func setup() {
-    
     fatalError("Method `setup` should be overriden for the coordinator \(self)")
   }
 }

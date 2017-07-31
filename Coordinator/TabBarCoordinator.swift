@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 open class TabBarCoordinator: Coordinator {
   
@@ -16,6 +17,8 @@ open class TabBarCoordinator: Coordinator {
   public let navigationController: UINavigationController
   public weak var parentCoordinator: Coordinator?
   public var childCoordinators: [Coordinator] = []
+  
+  public let disposeBag = DisposeBag()
   
   public let tabBarController = UITabBarController()
   public var tabs: [Coordinator.Type] = []
@@ -28,7 +31,6 @@ open class TabBarCoordinator: Coordinator {
   }
   
   open func setup() {
-    
     fatalError("Method `setup` should be overriden for the coordinator \(self)")
   }
 }

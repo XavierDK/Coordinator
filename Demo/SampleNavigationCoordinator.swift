@@ -16,17 +16,15 @@ final class SampleNavigationCoordinator: NavigationCoordinator {
     controller = UIStoryboard(name: "SampleViewController", bundle: nil).instantiateInitialViewController()
     
     let action: () -> () = { [weak self] in
-      
-      guard let strongSelf = self else { return }
-      
-      let coord: Coordinator
-//      if arc4random() % 2 == 0 {
-        coord = SampleNavigationCoordinator(navigationController: strongSelf.navigationController, parentCoordinator: strongSelf, context: strongSelf.context)
-//      }
-//      else {
-//        coord = SampleModalCoordinator(navigationController: strongSelf.navigationController, parentCoordinator: strongSelf, context: strongSelf.context)
-//      }
-      self?.startChild(forCoordinator: coord)
+
+      let coordType: Coordinator.Type
+      if arc4random() % 2 == 0 {
+        coordType = SampleNavigationCoordinator.self
+      }
+      else {
+        coordType = SampleModalCoordinator.self
+      }
+      self?.startChildCoordinator(forType: coordType)
     }
     
     if let controller = controller as? SampleViewController {

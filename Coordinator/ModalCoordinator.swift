@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 open class ModalCoordinator: Coordinator {
   
@@ -18,6 +19,8 @@ open class ModalCoordinator: Coordinator {
   public weak var parentCoordinator: Coordinator?
   public var childCoordinators: [Coordinator] = []
   
+  public let disposeBag = DisposeBag()
+  
   required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
     
     self.context = context
@@ -25,8 +28,7 @@ open class ModalCoordinator: Coordinator {
     self.parentNavigationController = navigationController
   }
   
-  open func setup() {
-    
+  open func setup() {    
     fatalError("Method `setup` should be overriden for the coordinator \(self)")
   }
 }
