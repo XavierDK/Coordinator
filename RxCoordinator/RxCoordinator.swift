@@ -12,31 +12,31 @@ import RxSwift
 import RxCocoa
 import Action
 
-protocol RxCoordinator: Coordinator {
-    
+public protocol RxCoordinator: Coordinator {
+  
   /// The rx dispose bag to manage the sequences resources
   /// @see https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md#disposing for more information
   var disposeBag: DisposeBag { get }
   
-  /// Rx Action implementation of stop to use it as a sequence
-  /// Call `startChild` under the hood
-  var startChildAction: Action<CoordinatorConfiguration, Coordinator> { get }
+  func startChildCoordinator(forConfiguration config: CoordinatorConfiguration) -> Observable<Coordinator>
+  
+  func stopChild(forCoordinator coordinator: Coordinator) -> Observable<Coordinator>
   
   /// Rx Action implementation of stop to use it as a sequence
   /// Call `stopFromParent` under the hood
-  var stopChildAction: Action<Void, Coordinator> { get }
+  var stopChildAction: CocoaAction { get }
 }
 
-extension RxCoordinator {
+public extension RxCoordinator {
   
-  var startChildAction: Action<CoordinatorConfiguration, Coordinator> {
+  // MARK: Action
+  
+  var stopChildAction: CocoaAction {
     
     return Action { [weak self] _ in
       return Observable.create { [weak self] (observer) in
         self?.stopFromParent({ _ in
-          if let strongSelf = self {
-            observer.onNext(strongSelf)
-          }
+          observer.onNext()
           observer.onCompleted()
         })
         return Disposables.create()
@@ -44,18 +44,35 @@ extension RxCoordinator {
     }
   }
   
-  var stopChildAction: Action<Void, Coordinator> {
+  // MARK: Start Rx wrapper
+  
+  func startChildCoordinator(forConfiguration config: CoordinatorConfiguration) -> Observable<Coordinator> {
     
-    return Action { [weak self] _ in
-      return Observable.create { [weak self] (observer) in
-        self?.stopFromParent({ _ in
-          if let strongSelf = self {
-            observer.onNext(strongSelf)
-          }
+    return Observable.create { [weak self] (observer) in
+      
+      self?.startChildCoordinator(forConfiguration: config, callback: { coordinator in
+        observer.onNext(coordinator)
+        observer.onCompleted()
+      })
+      
+      return Disposables.create()
+    }
+  }
+  
+  // MARK: Stop Rx wrapper
+  
+  func stopChild(forCoordinator coordinator: Coordinator) -> Observable<Coordinator> {
+    
+    return Observable.create { [weak self, weak coordinator] (observer) in
+      
+      if let coordinator = coordinator {
+        self?.stopChild(forCoordinator: coordinator, callback: { coordinator in
+          observer.onNext(coordinator)
           observer.onCompleted()
         })
-        return Disposables.create()
       }
+      
+      return Disposables.create()
     }
   }
 }

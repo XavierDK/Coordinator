@@ -15,6 +15,7 @@ public struct Context {
   /// The object containing the value wrapped
   private let valueStored: Any
   
+  
   /// The main init of the container
   ///
   /// - Parameter value: The object contained in the wrapper
@@ -23,6 +24,10 @@ public struct Context {
     self.valueStored = value
   }
   
+  /// The method to get bqck the value contained casted
+  ///
+  /// - Returns: The value casted contained
+  /// - Throws: Will throw an error if we ask of a bad value type
   public func value<T>() throws -> T {
     
     guard let value = valueStored as? T else {            
@@ -31,6 +36,9 @@ public struct Context {
     return value
   }
   
+  /// Enumeration of the possible errors for the context
+  ///
+  /// - badType: The value could not be casted in the type asked
   public enum ContextError: Error, CustomStringConvertible {
     
     case badType(Any, Any)

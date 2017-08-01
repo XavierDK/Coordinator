@@ -17,7 +17,12 @@
 		<key>RxCoordinator.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>2</integer>
+		</dict>
+		<key>RxDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>25F4F78D1F307AE1007B7534</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>25F4F7AB1F30D6FA007B7534</key>
 		<dict>
 			<key>primary</key>
 			<true/>
