@@ -8,18 +8,11 @@
 
 import UIKit
 import Coordinator
-import RxSwift
-import RxCocoa
-import Action
 
 final class SampleViewController: UIViewController {
   
   var action: (() -> ())?
-  var stop: Action<Void, Coordinator>?
-  
-  let disposeBag = DisposeBag()
-  
-  @IBOutlet weak var closeButton: UIBarButtonItem!
+  var stop: (() -> ())?
   
   override func viewDidLoad() {
     
@@ -32,21 +25,14 @@ final class SampleViewController: UIViewController {
     if navigationController?.viewControllers.first === self && !(navigationController!.isBeingPresented) {
       navigationItem.rightBarButtonItem = nil
     }
-    
-    setupButtons()
-  }
-  
-  func setupButtons() {
-    
-    if let stop = stop {
-      closeButton.rx.tap
-        .bind(to: stop.inputs)
-        .addDisposableTo(disposeBag)
-    }
   }
   
   @IBAction func actionPressed(sender: UIButton) {
     action?()
+  }
+  
+  @IBAction func closePressed(sender: UIButton) {
+    stop?()
   }
   
   deinit {

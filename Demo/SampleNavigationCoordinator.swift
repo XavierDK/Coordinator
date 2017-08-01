@@ -34,16 +34,7 @@ final class SampleNavigationCoordinator: NavigationCoordinator {
     
     if let controller = controller as? SampleViewController {
       controller.action = action
-      
-      let stop = stopChildAction
-      stop.elements
-        .subscribe(onNext: { coord in
-          
-          print("=> 🛑 Stop as been asked for \(coord)")
-        })
-        .addDisposableTo(disposeBag)
-      
-      controller.stop = stop
+      controller.stop = stopBlock
     }
   }
   

@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import Action
 
 /// A callback function used by coordinators to signal events.
 public typealias CoordinatorCallback = (Coordinator) -> Void
@@ -38,10 +35,6 @@ public protocol Coordinator: class {
   // All the children of the coordinator are retained here.
   var childCoordinators: [Coordinator] { get set }
   
-  /// The rx dispose bag to manage the sequences resources
-  /// @see https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md#disposing for more information
-  var disposeBag: DisposeBag { get }
-  
   /// Force a uniform initializer on our implementors.
   init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context)
   
@@ -67,8 +60,6 @@ public protocol Coordinator: class {
   
   func startChildCoordinator(forConfiguration configuration: CoordinatorConfiguration, callback: CoordinatorCallback?)
   
-  var startChildAction: Action<CoordinatorConfiguration, Coordinator> { get }
-  
   
   //
   // MARK: Stop section
@@ -82,10 +73,6 @@ public protocol Coordinator: class {
   /// Stop and remove the coordinator from is parent if he has one and call stop
   /// If not just call `stop`
   func stopFromParent(_ callback: CoordinatorCallback?)
-  
-  /// Rx Action implementation of stop to use it as a sequence
-  /// Call `stopFromParent` under the hood
-  var stopChildAction: Action<Void, Coordinator> { get }
   
   /**
    Stops the coordinator and removes our reference to it.
@@ -109,35 +96,6 @@ public extension Coordinator {
   // MARK: Start section
   //
   
-  var startChildAction: Action<CoordinatorConfiguration, Coordinator> {
-    return Action { [weak self] _ in
-      return Observable.create { [weak self] (observer) in
-        self?.stopFromParent({ _ in
-          if let strongSelf = self {
-            observer.onNext(strongSelf)
-          }
-          observer.onCompleted()
-        })
-        return Disposables.create()
-      }
-    }
-  }
-  
-  internal func startChild(forCoordinator coordinator: Coordinator, callback: CoordinatorCallback? = nil) {
-    
-    Observable<Int>.interval(3, scheduler: ConcurrentDispatchQueueScheduler(qos: .default))
-      .filter({ [weak controller] _ in (controller?.isViewLoaded ?? false && controller?.view.window != nil) })
-      .observeOn(MainScheduler.instance)
-      .subscribe(onNext: { [weak coordinator] _ in
-        guard let coordinator = coordinator else { return }
-        coordinator.stopFromParent()
-      })
-      .addDisposableTo(disposeBag)
-    
-    childCoordinators.append(coordinator)
-    coordinator.start(withCallback: callback)
-  }
-  
   func startChildCoordinator(forConfiguration config: CoordinatorConfiguration, callback: CoordinatorCallback? = nil) {
     
     let coord = config.type.init(navigationController: config.navigationController ?? self.navigationController, parentCoordinator: self, context: config.context ?? self.context)
@@ -149,17 +107,10 @@ public extension Coordinator {
   // MARK: Stop section
   //
   
-  var stopChildAction: Action<Void, Coordinator> {
-    return Action { [weak self] _ in
-      return Observable.create { [weak self] (observer) in
-        self?.stopFromParent({ _ in
-          if let strongSelf = self {
-            observer.onNext(strongSelf)
-          }
-          observer.onCompleted()
-        })
-        return Disposables.create()
-      }
+  var stopBlock: () -> () {
+    
+    return { [weak self] in
+      self?.stopFromParent()
     }
   }
   
@@ -185,6 +136,27 @@ public extension Coordinator {
         callback?(childCoordinator)
       })
     }
+  }
+}
+
+extension Coordinator {
+  
+  internal func startChild(forCoordinator coordinator: Coordinator, callback: CoordinatorCallback? = nil) {
+    
+    secureRelease(forCoordinator: coordinator)
+    childCoordinators.append(coordinator)
+    coordinator.start(withCallback: callback)
+  }
+  
+  // Check if the view is stil in the views hierarchy of the window
+  // If not, will stop the coordinator associated
+  internal func secureRelease(forCoordinator coordinator: Coordinator) {
+    
+    Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak controller, weak coordinator] _ in
+      if controller?.isViewLoaded ?? false && controller?.view.window != nil {
+        coordinator?.stopFromParent()
+      }
+      }.fire()
   }
 }
 

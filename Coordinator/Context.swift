@@ -8,10 +8,16 @@
 
 import Foundation
 
+/// The context is a wrapper of value passed to a coordinator to initialize his controller
+/// The value contained in can be of any type
 public struct Context {
   
+  /// The object containing the value wrapped
   private let valueStored: Any
   
+  /// The main init of the container
+  ///
+  /// - Parameter value: The object contained in the wrapper
   public init(value: Any) {
     
     self.valueStored = value

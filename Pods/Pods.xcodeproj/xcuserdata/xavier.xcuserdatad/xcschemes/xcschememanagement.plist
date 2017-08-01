@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RxCoordinator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RxCoordinatorTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,16 +57,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02E6693572487452048117D0D975D30D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1963B8F99EED52FDC5D9AE2197331B4A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2483CBADFFE2D3F7A03BE4A945EF9BAD</key>
 		<dict>
 			<key>primary</key>
@@ -67,7 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6640E1327D6711CFFB8F993253BFD46F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7B3A6B06C83A3BB2B9C1FCB017439BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>840FFFB9286F89F5DC3ABBFDC42E9C17</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A137F64650F1C5C4782CAE3096308824</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B9448F647E55928D2F8AD44DB7B1C1E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DD7C8BF89FE8053D0A2A2D88BB49CF07</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E57A61B87B5DAAFEAEC5F58D566540A0</key>
+		<key>DFC6EE7E78383D0CDCC1FEEE4A135799</key>
 		<dict>
 			<key>primary</key>
 			<true/>

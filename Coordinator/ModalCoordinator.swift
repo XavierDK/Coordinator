@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxSwift
 
 open class ModalCoordinator: Coordinator {
   
@@ -19,8 +18,6 @@ open class ModalCoordinator: Coordinator {
   public weak var parentCoordinator: Coordinator?
   public var childCoordinators: [Coordinator] = []
   
-  public let disposeBag = DisposeBag()
-  
   required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
     
     self.context = context
@@ -28,7 +25,7 @@ open class ModalCoordinator: Coordinator {
     self.parentNavigationController = navigationController
   }
   
-  open func setup() {    
+  open func setup() {
     fatalError("Method `setup` should be overriden for the coordinator \(self)")
   }
 }
@@ -42,18 +39,23 @@ extension ModalCoordinator {
     guard let controller = controller else { return }
     
     navigationController.tabBarItem = controller.tabBarItem
-    navigationController.pushViewController(controller, animated: false)
-    parentNavigationController.present(navigationController, animated: true)
-    
-    completion?(self)
+    navigationController.pushViewController(controller, animated: false) { [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.parentNavigationController.present(strongSelf.navigationController, animated: true) { [weak self] in
+        guard let strongSelf = self else { return }
+        completion?(strongSelf)
+      }
+    }
   }
   
   public func stop(withCallback completion: CoordinatorCallback? = nil) {
     
     if let _ = controller,
       parentNavigationController.presentedViewController == navigationController {
-      navigationController.dismiss(animated: true)
+      navigationController.dismiss(animated: true) { [weak self] in
+        guard let strongSelf = self else { return }
+        completion?(strongSelf)
+      }
     }
-    completion?(self)
   }
 }

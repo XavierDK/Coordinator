@@ -41,13 +41,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Sample" id="HkR-7n-rkF"/>
                     <navigationItem key="navigationItem" title="Sample" id="mcr-AC-AqW">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="MLx-Gd-rI7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="MLx-Gd-rI7">
+                            <connections>
+                                <action selector="closePressedWithSender:" destination="G4D-we-RcG" id="Lal-yY-ZR8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="closeButton" destination="MLx-Gd-rI7" id="E47-Gg-IaE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhS-9T-k3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

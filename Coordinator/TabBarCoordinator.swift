@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RxSwift
 
 open class TabBarCoordinator: Coordinator {
   
@@ -17,8 +16,6 @@ open class TabBarCoordinator: Coordinator {
   public let navigationController: UINavigationController
   public weak var parentCoordinator: Coordinator?
   public var childCoordinators: [Coordinator] = []
-  
-  public let disposeBag = DisposeBag()
   
   public let tabBarController = UITabBarController()
   public var tabs: [Coordinator.Type] = []
@@ -49,13 +46,17 @@ public extension TabBarCoordinator {
       
       return navigationController
     }
-    navigationController.pushViewController(tabBarController, animated: true)
-    completion?(self)
+    navigationController.pushViewController(tabBarController, animated: true) { [weak self] in
+      guard let strongSelf = self else { return }
+      completion?(strongSelf)
+    }
   }
   
   func stop(withCallback completion: CoordinatorCallback? = nil) {
     
-    navigationController.popViewController(animated: true)
-    completion?(self)
+    navigationController.popViewController(animated: true) { [weak self] in
+      guard let strongSelf = self else { return }
+      completion?(strongSelf)
+    }
   }
 }
