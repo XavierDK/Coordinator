@@ -38,7 +38,7 @@ extension ModalCoordinator {
     
     guard let controller = controller else { return }
     
-    navigationController.tabBarItem = controller.tabBarItem
+    navigationController.tabBarItem = controller.tabBarItem    
     navigationController.pushViewController(controller, animated: false) { [weak self] in
       guard let strongSelf = self else { return }
       strongSelf.parentNavigationController.present(strongSelf.navigationController, animated: true) { [weak self] in

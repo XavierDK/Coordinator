@@ -39,6 +39,8 @@
 		25F4F7B41F30D6FA007B7534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F4F7B21F30D6FA007B7534 /* Main.storyboard */; };
 		25F4F7B61F30D6FA007B7534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F4F7B51F30D6FA007B7534 /* Assets.xcassets */; };
 		25F4F7B91F30D6FA007B7534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F4F7B71F30D6FA007B7534 /* LaunchScreen.storyboard */; };
+		25F4F7BF1F31D13A007B7534 /* AppCoordinator_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7BE1F31D13A007B7534 /* AppCoordinator_iPad.swift */; };
+		25F4F7C11F31D2F4007B7534 /* SplitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7C01F31D2F4007B7534 /* SplitCoordinator.swift */; };
 		50B2606DDC855749EF4E53FF /* Pods_RxCoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82763CA8B13EAD22294606B /* Pods_RxCoordinatorTests.framework */; };
 		7484B97664915FBBC058FB27 /* Pods_RxCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */; };
 		996180E5804577DD8C4B02B0 /* Pods_CoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73BDF580C9C48730106E3CB /* Pods_CoordinatorTests.framework */; };
@@ -137,6 +139,8 @@
 		25F4F7B51F30D6FA007B7534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25F4F7B81F30D6FA007B7534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25F4F7BA1F30D6FA007B7534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25F4F7BE1F31D13A007B7534 /* AppCoordinator_iPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator_iPad.swift; sourceTree = "<group>"; };
+		25F4F7C01F31D2F4007B7534 /* SplitCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitCoordinator.swift; sourceTree = "<group>"; };
 		4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFFCAFE082458454DCE32DC /* Pods_Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2EAC9B49F42255C20DDF98 /* Pods-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coordinator/Pods-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				255DD3701F2A3287003C7003 /* TabBarCoordinator.swift */,
 				255DD37A1F2A39A6003C7003 /* ModalCoordinator.swift */,
 				255DD3781F2A399A003C7003 /* NavigationCoordinator.swift */,
+				25F4F7C01F31D2F4007B7534 /* SplitCoordinator.swift */,
 				25F4F7A61F307F89007B7534 /* UINavigationController+Extension.swift */,
 			);
 			path = Coordinator;
@@ -283,6 +288,7 @@
 				255DD3581F29E3D6003C7003 /* AppCoordinator.swift */,
 				255DD3721F2A3615003C7003 /* SampleNavigationCoordinator.swift */,
 				252F7D211F2A45B8003B45FC /* SampleModalCoordinator.swift */,
+				25F4F7BE1F31D13A007B7534 /* AppCoordinator_iPad.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -824,6 +830,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				252F7D241F2F35C0003B45FC /* CoordinatorConfiguration.swift in Sources */,
+				25F4F7C11F31D2F4007B7534 /* SplitCoordinator.swift in Sources */,
 				255DD37B1F2A39A6003C7003 /* ModalCoordinator.swift in Sources */,
 				255DD3531F29DD5B003C7003 /* Coordinator.swift in Sources */,
 				255DD3551F29E2AD003C7003 /* Context.swift in Sources */,
@@ -850,6 +857,7 @@
 				255DD3431F29D96F003C7003 /* AppDelegate.swift in Sources */,
 				255DD3751F2A3626003C7003 /* SampleViewController.swift in Sources */,
 				252F7D221F2A45B8003B45FC /* SampleModalCoordinator.swift in Sources */,
+				25F4F7BF1F31D13A007B7534 /* AppCoordinator_iPad.swift in Sources */,
 				255DD3731F2A3615003C7003 /* SampleNavigationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

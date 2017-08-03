@@ -1,14 +1,14 @@
 //
-//  TabBarCoordinator.swift
+//  SplitCoordinator.swift
 //  Coordinator
 //
-//  Created by Xavier De Koninck on 27/07/2017.
+//  Created by Xavier De Koninck on 02/08/2017.
 //  Copyright © 2017 PagesJaunes. All rights reserved.
 //
 
 import Foundation
 
-open class TabBarCoordinator: Coordinator {
+open class SplitCoordinator: Coordinator {
   
   public var controller: UIViewController?
   
@@ -17,7 +17,8 @@ open class TabBarCoordinator: Coordinator {
   public weak var parentCoordinator: Coordinator?
   public var childCoordinators: [Coordinator] = []
   
-  public var tabs: [Coordinator.Type] = []
+  public var masterCoordinator: Coordinator.Type?
+  public var detailCoordinator: Coordinator.Type?
   
   required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
     
@@ -31,30 +32,32 @@ open class TabBarCoordinator: Coordinator {
   }
 }
 
-public extension TabBarCoordinator {
+public extension SplitCoordinator {
   
   func start(withCallback completion: CoordinatorCallback? = nil) {
     
     setup()
-    
-    let tabBarController = UITabBarController()
-    
     navigationController.setNavigationBarHidden(true, animated: false)
-    tabBarController.viewControllers = tabs.map { childCoordinator in
-      
+    
+    let splitViewController = UISplitViewController()
+    
+    UIApplication.shared.windows.first?.rootViewController = splitViewController
+    
+    if let masterCoordinator = masterCoordinator {
       let navigationController = UINavigationController()
-      let coordinator = childCoordinator.init(navigationController: navigationController, parentCoordinator: self, context: context)
+      let coordinator = masterCoordinator.init(navigationController: navigationController, parentCoordinator: self, context: context)
+      startChild(forCoordinator: coordinator, callback: { [weak splitViewController] _ in
+        splitViewController?.show(navigationController, sender: nil)
+      })
+    }
+    if let detailCoordinator = detailCoordinator {
+      let navigationController = UINavigationController()
+      let coordinator = detailCoordinator.init(navigationController: navigationController, parentCoordinator: self, context: context)
       startChild(forCoordinator: coordinator, callback: nil)
-      
-      return navigationController
+      splitViewController.showDetailViewController(navigationController, sender: nil)
     }
     
-    controller = tabBarController
-    
-    navigationController.pushViewController(tabBarController, animated: true) { [weak self] in
-      guard let strongSelf = self else { return }
-      completion?(strongSelf)
-    }
+    controller = splitViewController
   }
   
   func stop(withCallback completion: CoordinatorCallback? = nil) {

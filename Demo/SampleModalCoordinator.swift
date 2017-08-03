@@ -13,6 +13,8 @@ final class SampleModalCoordinator: ModalCoordinator {
   
   override func setup() {
 
+    navigationController.modalPresentationStyle = .currentContext
+    
     controller = UIStoryboard(name: "SampleViewController", bundle: nil).instantiateInitialViewController()
     
     print("=> ❇️ Setup of \(self) containing controller: \(String(describing: controller!))")
@@ -29,7 +31,7 @@ final class SampleModalCoordinator: ModalCoordinator {
       
       let config = CoordinatorConfiguration(type: coordType)
       self?.startChildCoordinator(forConfiguration: config)
-    }
+    }        
     
     if let controller = controller as? SampleViewController {
       controller.action = action

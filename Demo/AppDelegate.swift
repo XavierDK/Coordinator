@@ -11,10 +11,10 @@ import Coordinator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
   var window: UIWindow?
-  var appCoordinator: AppCoordinator!
-
+  var appCoordinator: Coordinator!
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     /// Create a window manually
@@ -25,10 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = navigationController
     
     /// Create your main coordinator for your app
-    appCoordinator = AppCoordinator(navigationController: navigationController, parentCoordinator: nil, context: Context(value: ()))
+    if UIDevice.current.userInterfaceIdiom == .phone {
+      appCoordinator = AppCoordinator(navigationController: navigationController, parentCoordinator: nil, context: Context(value: ()))
+    }
+    else {
+      appCoordinator = AppCoordinator_iPad(navigationController: navigationController, parentCoordinator: nil, context: Context(value: ()))
+    }
     
     /// And start it
-    appCoordinator.start()
+    appCoordinator.start(withCallback: nil)
     
     window?.makeKeyAndVisible()
     
