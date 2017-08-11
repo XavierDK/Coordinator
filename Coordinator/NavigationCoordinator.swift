@@ -24,18 +24,20 @@ open class NavigationCoordinator: Coordinator {
     self.navigationController = navigationController
   }
   
-  open func setup() {
-    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  open func setup() throws {
+    throw CoordinatorError.badImplementation("‼️ERROR‼️ : Method `setup` should be overriden for the coordinator \(self)")
   }
 }
 
 public extension NavigationCoordinator {
   
-  func start(withCallback completion: CoordinatorCallback? = nil) {
+  func start(withCallback completion: CoordinatorCallback? = nil) throws {
     
-    setup()
+    try setup()
     
-    guard let controller = controller else { return }
+    guard let controller = controller else {
+      throw CoordinatorError.badImplementation("‼️ERROR‼️ : You must have initialized the controller in method `setup` for coordinator \(self)")
+    }
     
     navigationController.tabBarItem = controller.tabBarItem
     navigationController.pushViewController(controller, animated: true) { [weak self] in

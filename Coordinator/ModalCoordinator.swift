@@ -25,23 +25,30 @@ open class ModalCoordinator: Coordinator {
     self.parentNavigationController = navigationController
   }
   
-  open func setup() {
-    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  open func setup() throws {
+    throw CoordinatorError.badImplementation("‼️ERROR‼️ : Method `setup` should be overriden for the coordinator \(self)")
   }
 }
 
 extension ModalCoordinator {
   
-  public func start(withCallback completion: CoordinatorCallback? = nil) {
+  public func start(withCallback completion: CoordinatorCallback? = nil) throws {
     
-    setup()
+    try setup()
     
-    guard let controller = controller else { return }
+    guard let controller = controller else {
+      throw CoordinatorError.badImplementation("‼️ERROR‼️ : You must have initialized the controller in method `setup` for coordinator \(self)")
+    }
     
     navigationController.tabBarItem = controller.tabBarItem    
     navigationController.pushViewController(controller, animated: false) { [weak self] in
       guard let strongSelf = self else { return }
-      strongSelf.parentNavigationController.present(strongSelf.navigationController, animated: true) { [weak self] in
+      
+      var contr: UIViewController? = strongSelf.parentNavigationController.splitViewController
+      contr = contr ?? strongSelf.parentNavigationController.tabBarController
+      contr = contr ?? strongSelf.parentNavigationController
+        
+      contr?.present(strongSelf.navigationController, animated: true) { [weak self] in
         guard let strongSelf = self else { return }
         completion?(strongSelf)
       }

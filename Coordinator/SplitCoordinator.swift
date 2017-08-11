@@ -27,35 +27,40 @@ open class SplitCoordinator: Coordinator {
     self.context = context
   }
   
-  open func setup() {
-    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  open func setup() throws {
+    throw CoordinatorError.badImplementation("‼️ERROR‼️ : Method `setup` should be overriden for the coordinator \(self)")
   }
 }
 
 public extension SplitCoordinator {
   
-  func start(withCallback completion: CoordinatorCallback? = nil) {
+  func start(withCallback completion: CoordinatorCallback? = nil) throws {
     
-    setup()
-    navigationController.setNavigationBarHidden(true, animated: false)
+    try setup()
+    
+    self.navigationController.setNavigationBarHidden(true, animated: false)
+    
+    guard let masterCoordinatorType = self.masterCoordinator else {
+      throw CoordinatorError.badImplementation("‼️ERROR‼️ : You must have initialized the masterCoordinator in method `setup` for coordinator \(self)")
+    }
+    guard let detailCoordinatorType = self.detailCoordinator else {
+      throw CoordinatorError.badImplementation("‼️ERROR‼️ : You must have initialized the detailCoordinator in method `setup` for coordinator \(self)")
+    }
     
     let splitViewController = UISplitViewController()
     
+    // This is because an UISplitViewController has to be in root 😌🤢
     UIApplication.shared.windows.first?.rootViewController = splitViewController
     
-    if let masterCoordinator = masterCoordinator {
-      let navigationController = UINavigationController()
-      let coordinator = masterCoordinator.init(navigationController: navigationController, parentCoordinator: self, context: context)
-      startChild(forCoordinator: coordinator, callback: { [weak splitViewController] _ in
-        splitViewController?.show(navigationController, sender: nil)
-      })
-    }
-    if let detailCoordinator = detailCoordinator {
-      let navigationController = UINavigationController()
-      let coordinator = detailCoordinator.init(navigationController: navigationController, parentCoordinator: self, context: context)
-      startChild(forCoordinator: coordinator, callback: nil)
-      splitViewController.showDetailViewController(navigationController, sender: nil)
-    }
+    let masterNavController = UINavigationController()
+    let masterCoordinator = masterCoordinatorType.init(navigationController: masterNavController, parentCoordinator: self, context: context)
+    startChild(forCoordinator: masterCoordinator)
+    
+    let detailsNavController = UINavigationController()
+    let detailsCoordinator = detailCoordinatorType.init(navigationController: detailsNavController, parentCoordinator: self, context: context)
+    startChild(forCoordinator: detailsCoordinator)
+    
+    splitViewController.viewControllers = [masterNavController, detailsNavController]
     
     controller = splitViewController
   }

@@ -8,17 +8,29 @@
 
 import Foundation
 
+/// Default implementation of a coordinator using UITabBarController
 open class TabBarCoordinator: Coordinator {
   
+  /// The reference of the controller which is owned by the coordinator
+  /// Can be nil in case of conditionnal transition coordinator
   public var controller: UIViewController?
   
+  /// Some object holding information about the application context. Database references, user settings etc.
   public let context: Context
+  
+  /// The navigation controller used by the coordinator.
   public let navigationController: UINavigationController
+  
+  /// The optionnal parent coordinator
   public weak var parentCoordinator: Coordinator?
+  
+  // All the children of the coordinator are retained here.
   public var childCoordinators: [Coordinator] = []
   
+  // The children coordinator composing the tabBar elements.
   public var tabs: [Coordinator.Type] = []
   
+  /// Force a uniform initializer on our implementors.
   required public init(navigationController: UINavigationController, parentCoordinator: Coordinator?, context: Context) {
     
     self.navigationController = navigationController
@@ -26,16 +38,20 @@ open class TabBarCoordinator: Coordinator {
     self.context = context
   }
   
-  open func setup() {
-    fatalError("Method `setup` should be overriden for the coordinator \(self)")
+  open func setup() throws {
+    throw CoordinatorError.badImplementation("‼️ERROR‼️ : Method `setup` should be overriden for the coordinator \(self)")
   }
 }
 
 public extension TabBarCoordinator {
   
-  func start(withCallback completion: CoordinatorCallback? = nil) {
+  func start(withCallback completion: CoordinatorCallback? = nil) throws {
     
-    setup()
+    try setup()
+    
+    guard tabs.count > 0 else {
+      throw CoordinatorError.badImplementation("‼️ERROR‼️ : You must insert at least one coordinator in tabs array for coordinator \(self)")
+    }
     
     let tabBarController = UITabBarController()
     

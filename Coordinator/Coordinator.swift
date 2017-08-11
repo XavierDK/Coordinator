@@ -23,7 +23,7 @@ public protocol Coordinator: class {
   var context: Context { get }
   
   /// The reference of the controller which is owned by the coordinator
-  /// Can be nil in case of just transition coordinator
+  /// Can be nil in case of conditionnal transition coordinator
   var controller: UIViewController? { get }
   
   /// The navigation controller used by the coordinator.
@@ -46,7 +46,7 @@ public protocol Coordinator: class {
   /// Tells the coordinator to create its initial view controller and take over the user flow.
   /// Just use for your main coordinator.
   /// Prefer startChildCoordinator or startChildAction instead.
-  func start(withCallback completion: CoordinatorCallback?)
+  func start(withCallback completion: CoordinatorCallback?) throws
   
   /**
    Add a new child coordinator and start it.
@@ -98,7 +98,7 @@ public extension Coordinator {
   
   func startChildCoordinator(forConfiguration config: CoordinatorConfiguration, callback: CoordinatorCallback? = nil) {
     
-    let coord = config.type.init(navigationController: config.navigationController ?? self.navigationController, parentCoordinator: self, context: config.context ?? self.context)
+    let coord = config.type.init(navigationController: /*config.navigationController ??*/ self.navigationController, parentCoordinator: self, context: config.context ?? self.context)
     startChild(forCoordinator: coord, callback: callback)
   }
   
@@ -145,7 +145,7 @@ extension Coordinator {
     
     secureRelease(forCoordinator: coordinator)
     childCoordinators.append(coordinator)
-    coordinator.start(withCallback: callback)
+    try! coordinator.start(withCallback: callback)
   }
   
   // Check if the view is stil in the views hierarchy of the window
@@ -159,4 +159,3 @@ extension Coordinator {
       }.fire()
   }
 }
-

@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     /// And start it
-    appCoordinator.start(withCallback: nil)
+    try! appCoordinator.start(withCallback: nil)
     
     window?.makeKeyAndVisible()
     

@@ -16,7 +16,9 @@ final class SampleNavigationCoordinator: NavigationCoordinator {
     
     controller = UIStoryboard(name: "SampleViewController", bundle: nil).instantiateInitialViewController()
     
-    print("=> ❇️ Setup of \(self) containing controller: \(String(describing: controller!))")
+    if let controller = controller {
+      print("=> ❇️ Setup of \(self) containing controller: \(String(describing: controller))")
+    }
     
     let action: () -> () = { [weak self] in
 
