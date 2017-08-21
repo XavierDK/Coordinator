@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Coordinator
+import NeoCoordinator
 
 final class SampleViewController: UIViewController {
   

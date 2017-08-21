@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Coordinator
+import NeoCoordinator
 import RxSwift
 import RxCocoa
 import Action

@@ -6,7 +6,7 @@
 //  Copyright © 2017 PagesJaunes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Default implementation of a coordinator using UITabBarController
 open class TabBarCoordinator: Coordinator {

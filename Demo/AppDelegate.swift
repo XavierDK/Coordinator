@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Coordinator
+import NeoCoordinator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

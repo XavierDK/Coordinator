@@ -6,8 +6,8 @@
 //  Copyright © 2017 PagesJaunes. All rights reserved.
 //
 
-import Foundation
-import Coordinator
+import UIKit
+import NeoCoordinator
 
 final class SampleModalCoordinator: ModalCoordinator {
   

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Coordinator
+import NeoCoordinator
 import Action
 
 final class SampleNavigationCoordinator: NavigationCoordinator {

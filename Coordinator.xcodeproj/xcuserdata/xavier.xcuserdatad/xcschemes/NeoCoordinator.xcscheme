@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "255DD3211F29D950003C7003"
-               BuildableName = "Coordinator.framework"
-               BlueprintName = "Coordinator"
+               BlueprintIdentifier = "25DA06A01F4B31E30019D87C"
+               BuildableName = "NeoCoordinator.framework"
+               BlueprintName = "NeoCoordinator"
                ReferencedContainer = "container:Coordinator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "255DD32A1F29D950003C7003"
-               BuildableName = "CoordinatorTests.xctest"
-               BlueprintName = "CoordinatorTests"
-               ReferencedContainer = "container:Coordinator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "255DD3211F29D950003C7003"
-            BuildableName = "Coordinator.framework"
-            BlueprintName = "Coordinator"
-            ReferencedContainer = "container:Coordinator.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "255DD3211F29D950003C7003"
-            BuildableName = "Coordinator.framework"
-            BlueprintName = "Coordinator"
+            BlueprintIdentifier = "25DA06A01F4B31E30019D87C"
+            BuildableName = "NeoCoordinator.framework"
+            BlueprintName = "NeoCoordinator"
             ReferencedContainer = "container:Coordinator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "255DD3211F29D950003C7003"
-            BuildableName = "Coordinator.framework"
-            BlueprintName = "Coordinator"
+            BlueprintIdentifier = "25DA06A01F4B31E30019D87C"
+            BuildableName = "NeoCoordinator.framework"
+            BlueprintName = "NeoCoordinator"
             ReferencedContainer = "container:Coordinator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

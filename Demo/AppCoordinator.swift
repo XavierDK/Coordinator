@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Coordinator
+import NeoCoordinator
 
 /// Main coordinator of your app
 /// In this case, it is a TabBarCoordinator 
