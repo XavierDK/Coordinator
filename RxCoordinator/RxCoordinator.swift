@@ -18,9 +18,9 @@ public protocol RxCoordinator: Coordinator {
   /// @see https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md#disposing for more information
   var disposeBag: DisposeBag { get }
   
-  func startChildCoordinator(forConfiguration config: CoordinatorConfiguration) -> Observable<Coordinator>
+  func startRxChildCoordinator(forConfiguration config: CoordinatorConfiguration) -> Observable<Coordinator>
   
-  func stopChild(forCoordinator coordinator: Coordinator) -> Observable<Coordinator>
+  func stopRxChild(forCoordinator coordinator: Coordinator) -> Observable<Coordinator>
   
   /// Rx Action implementation of stop to use it as a sequence
   /// Call `stopFromParent` under the hood
@@ -46,7 +46,7 @@ public extension RxCoordinator {
   
   // MARK: Start Rx wrapper
   
-  func startChildCoordinator(forConfiguration config: CoordinatorConfiguration) -> Observable<Coordinator> {
+  func startRxChildCoordinator(forConfiguration config: CoordinatorConfiguration) -> Observable<Coordinator> {
     
     return Observable.create { [weak self] (observer) in
       
@@ -61,7 +61,7 @@ public extension RxCoordinator {
   
   // MARK: Stop Rx wrapper
   
-  func stopChild(forCoordinator coordinator: Coordinator) -> Observable<Coordinator> {
+  func stopRxChild(forCoordinator coordinator: Coordinator) -> Observable<Coordinator> {
     
     return Observable.create { [weak self, weak coordinator] (observer) in
       

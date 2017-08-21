@@ -25,12 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = navigationController
     
     /// Create your main coordinator for your app
-    if UIDevice.current.userInterfaceIdiom == .phone {
+//    if UIDevice.current.userInterfaceIdiom == .phone {
       appCoordinator = AppCoordinator(navigationController: navigationController, parentCoordinator: nil, context: Context(value: ()))
-    }
-    else {
-      appCoordinator = AppCoordinator_iPad(navigationController: navigationController, parentCoordinator: nil, context: Context(value: ()))
-    }
+//    }
+//    else {
+//      appCoordinator = AppCoordinator_iPad(navigationController: navigationController, parentCoordinator: nil, context: Context(value: ()))
+//    }
     
     /// And start it
     try! appCoordinator.start(withCallback: nil)

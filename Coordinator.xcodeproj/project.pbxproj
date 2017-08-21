@@ -35,12 +35,6 @@
 		25F4F7A41F307DAD007B7534 /* RxCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7A31F307DAD007B7534 /* RxCoordinator.swift */; };
 		25F4F7A51F307DCD007B7534 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255DD3221F29D950003C7003 /* Coordinator.framework */; };
 		25F4F7A71F307F89007B7534 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7A61F307F89007B7534 /* UINavigationController+Extension.swift */; };
-		25F4F7AF1F30D6FA007B7534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7AE1F30D6FA007B7534 /* AppDelegate.swift */; };
-		25F4F7B41F30D6FA007B7534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F4F7B21F30D6FA007B7534 /* Main.storyboard */; };
-		25F4F7B61F30D6FA007B7534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F4F7B51F30D6FA007B7534 /* Assets.xcassets */; };
-		25F4F7B91F30D6FA007B7534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F4F7B71F30D6FA007B7534 /* LaunchScreen.storyboard */; };
-		25F4F7BF1F31D13A007B7534 /* AppCoordinator_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7BE1F31D13A007B7534 /* AppCoordinator_iPad.swift */; };
-		25F4F7C11F31D2F4007B7534 /* SplitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7C01F31D2F4007B7534 /* SplitCoordinator.swift */; };
 		50B2606DDC855749EF4E53FF /* Pods_RxCoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82763CA8B13EAD22294606B /* Pods_RxCoordinatorTests.framework */; };
 		7484B97664915FBBC058FB27 /* Pods_RxCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */; };
 		996180E5804577DD8C4B02B0 /* Pods_CoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73BDF580C9C48730106E3CB /* Pods_CoordinatorTests.framework */; };
@@ -133,12 +127,6 @@
 		25F4F7971F307AE1007B7534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25F4F7A31F307DAD007B7534 /* RxCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCoordinator.swift; sourceTree = "<group>"; };
 		25F4F7A61F307F89007B7534 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
-		25F4F7AC1F30D6FA007B7534 /* RxDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		25F4F7AE1F30D6FA007B7534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25F4F7B31F30D6FA007B7534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		25F4F7B51F30D6FA007B7534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		25F4F7B81F30D6FA007B7534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		25F4F7BA1F30D6FA007B7534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25F4F7BE1F31D13A007B7534 /* AppCoordinator_iPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator_iPad.swift; sourceTree = "<group>"; };
 		25F4F7C01F31D2F4007B7534 /* SplitCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitCoordinator.swift; sourceTree = "<group>"; };
 		4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,13 +192,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25F4F7A91F30D6FA007B7534 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -220,7 +201,6 @@
 				255DD3241F29D950003C7003 /* Coordinator */,
 				25F4F7871F307AE1007B7534 /* RxCoordinator */,
 				255DD3411F29D96F003C7003 /* Demo */,
-				25F4F7AD1F30D6FA007B7534 /* RxDemo */,
 				255DD32F1F29D950003C7003 /* CoordinatorTests */,
 				25F4F7941F307AE1007B7534 /* RxCoordinatorTests */,
 				255DD3231F29D950003C7003 /* Products */,
@@ -237,7 +217,6 @@
 				255DD3401F29D96F003C7003 /* Demo.app */,
 				25F4F7861F307AE1007B7534 /* RxCoordinator.framework */,
 				25F4F78E1F307AE1007B7534 /* RxCoordinatorTests.xctest */,
-				25F4F7AC1F30D6FA007B7534 /* RxDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,18 +298,6 @@
 				25F4F7971F307AE1007B7534 /* Info.plist */,
 			);
 			path = RxCoordinatorTests;
-			sourceTree = "<group>";
-		};
-		25F4F7AD1F30D6FA007B7534 /* RxDemo */ = {
-			isa = PBXGroup;
-			children = (
-				25F4F7AE1F30D6FA007B7534 /* AppDelegate.swift */,
-				25F4F7B21F30D6FA007B7534 /* Main.storyboard */,
-				25F4F7B51F30D6FA007B7534 /* Assets.xcassets */,
-				25F4F7B71F30D6FA007B7534 /* LaunchScreen.storyboard */,
-				25F4F7BA1F30D6FA007B7534 /* Info.plist */,
-			);
-			path = RxDemo;
 			sourceTree = "<group>";
 		};
 		3C905AF6EFB8B930C4311999 /* Frameworks */ = {
@@ -490,23 +457,6 @@
 			productReference = 25F4F78E1F307AE1007B7534 /* RxCoordinatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		25F4F7AB1F30D6FA007B7534 /* RxDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 25F4F7BB1F30D6FA007B7534 /* Build configuration list for PBXNativeTarget "RxDemo" */;
-			buildPhases = (
-				25F4F7A81F30D6FA007B7534 /* Sources */,
-				25F4F7A91F30D6FA007B7534 /* Frameworks */,
-				25F4F7AA1F30D6FA007B7534 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RxDemo;
-			productName = RxDemo;
-			productReference = 25F4F7AC1F30D6FA007B7534 /* RxDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -545,11 +495,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 255DD33F1F29D96F003C7003;
 					};
-					25F4F7AB1F30D6FA007B7534 = {
-						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 8XF24Z96S9;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 255DD31C1F29D950003C7003 /* Build configuration list for PBXProject "Coordinator" */;
@@ -570,7 +515,6 @@
 				255DD33F1F29D96F003C7003 /* Demo */,
 				25F4F7851F307AE1007B7534 /* RxCoordinator */,
 				25F4F78D1F307AE1007B7534 /* RxCoordinatorTests */,
-				25F4F7AB1F30D6FA007B7534 /* RxDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -611,16 +555,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25F4F7AA1F30D6FA007B7534 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25F4F7B91F30D6FA007B7534 /* LaunchScreen.storyboard in Resources */,
-				25F4F7B61F30D6FA007B7534 /* Assets.xcassets in Resources */,
-				25F4F7B41F30D6FA007B7534 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,7 +764,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				252F7D241F2F35C0003B45FC /* CoordinatorTypes.swift in Sources */,
-				25F4F7C11F31D2F4007B7534 /* SplitCoordinator.swift in Sources */,
 				255DD37B1F2A39A6003C7003 /* ModalCoordinator.swift in Sources */,
 				255DD3531F29DD5B003C7003 /* Coordinator.swift in Sources */,
 				255DD3551F29E2AD003C7003 /* Context.swift in Sources */,
@@ -857,7 +790,6 @@
 				255DD3431F29D96F003C7003 /* AppDelegate.swift in Sources */,
 				255DD3751F2A3626003C7003 /* SampleViewController.swift in Sources */,
 				252F7D221F2A45B8003B45FC /* SampleModalCoordinator.swift in Sources */,
-				25F4F7BF1F31D13A007B7534 /* AppCoordinator_iPad.swift in Sources */,
 				255DD3731F2A3615003C7003 /* SampleNavigationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,14 +807,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				25F4F7961F307AE1007B7534 /* RxCoordinatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25F4F7A81F30D6FA007B7534 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25F4F7AF1F30D6FA007B7534 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,22 +845,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				255DD34C1F29D96F003C7003 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		25F4F7B21F30D6FA007B7534 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				25F4F7B31F30D6FA007B7534 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		25F4F7B71F30D6FA007B7534 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				25F4F7B81F30D6FA007B7534 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1219,32 +1127,6 @@
 			};
 			name = Release;
 		};
-		25F4F7BC1F30D6FA007B7534 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8XF24Z96S9;
-				INFOPLIST_FILE = RxDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.RxDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		25F4F7BD1F30D6FA007B7534 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8XF24Z96S9;
-				INFOPLIST_FILE = RxDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.RxDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1298,15 +1180,6 @@
 			buildConfigurations = (
 				25F4F79F1F307AE1007B7534 /* Debug */,
 				25F4F7A01F307AE1007B7534 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		25F4F7BB1F30D6FA007B7534 /* Build configuration list for PBXNativeTarget "RxDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				25F4F7BC1F30D6FA007B7534 /* Debug */,
-				25F4F7BD1F30D6FA007B7534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
