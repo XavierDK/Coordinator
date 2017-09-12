@@ -98,7 +98,7 @@ public extension Coordinator {
   
   func startChildCoordinator(forConfiguration config: CoordinatorConfiguration, callback: CoordinatorCallback? = nil) {
     
-    let coord = config.type.init(navigationController: /*config.navigationController ??*/ self.navigationController, parentCoordinator: self, context: config.context ?? self.context)
+    let coord = config.type.init(navigationController: self.navigationController, parentCoordinator: self, context: config.context ?? self.context)
     startChild(forCoordinator: coord, callback: callback)
   }
   
@@ -152,10 +152,12 @@ extension Coordinator {
   // If not, will stop the coordinator associated
   internal func secureRelease(forCoordinator coordinator: Coordinator) {
     
-    Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak controller, weak coordinator] _ in
-      if controller?.isViewLoaded ?? false && controller?.view.window != nil {
-        coordinator?.stopFromParent()
-      }
-      }.fire()
+    if #available(iOS 10.0, *) {
+      Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak controller, weak coordinator] _ in
+        if controller?.isViewLoaded ?? false && controller?.view.window != nil {
+          coordinator?.stopFromParent()
+        }
+        }.fire()
+    }
   }
 }

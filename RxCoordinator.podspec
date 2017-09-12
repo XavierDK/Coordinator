@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxCoordinator'
-  s.version          = '0.1.0'
+  s.version          = '0.3.0'
   s.summary          = 'A Rx wrapper on Coordinator.'
 
 # This description is used to generate tags and improve search results.
@@ -39,5 +39,9 @@ RxCoordinator provide some methods for Rx implementation.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'NeoCoordinator', '~> 0.1.0'
+  s.dependency 'NeoCoordinator', '~> 0.2.0'
+  s.dependency 'RxSwift'
+  s.dependency 'RxCocoa'
+  s.dependency 'Action'
+  
 end
