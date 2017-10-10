@@ -159,5 +159,27 @@ extension Coordinator {
         }
         }.fire()
     }
+    else {
+      secureReleaseiOS9(forCoordinator: coordinator, andController: controller)
+    }
+  }
+}
+
+
+/// Secure release before iOS 10
+extension Coordinator {
+  
+  func secureReleaseiOS9(forCoordinator coordinator: Coordinator, andController controller: UIViewController?)
+  {
+    DispatchQueue.main.asyncAfter(
+      deadline: .now() + 3,
+      execute: { [weak self, weak controller, weak coordinator] in
+        if controller?.isViewLoaded ?? false && controller?.view.window != nil {
+          coordinator?.stopFromParent()
+        }
+        if let coordinator = coordinator {
+          self?.secureReleaseiOS9(forCoordinator: coordinator, andController: controller)
+        }
+    })
   }
 }

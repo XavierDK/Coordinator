@@ -26,6 +26,7 @@
 		25DA06A91F4B31E30019D87C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255DD3701F2A3287003C7003 /* TabBarCoordinator.swift */; };
 		25DA06AB1F4B31E30019D87C /* Pods_Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFFCAFE082458454DCE32DC /* Pods_Coordinator.framework */; };
 		25DA06AD1F4B31E30019D87C /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 255DD3251F29D950003C7003 /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25E9D4A51F79550700BE3675 /* NeoCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DA06B31F4B31E30019D87C /* NeoCoordinator.framework */; };
 		25F4F78F1F307AE1007B7534 /* RxCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F4F7861F307AE1007B7534 /* RxCoordinator.framework */; };
 		25F4F7961F307AE1007B7534 /* RxCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7951F307AE1007B7534 /* RxCoordinatorTests.swift */; };
 		25F4F7981F307AE1007B7534 /* RxCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F4F7881F307AE1007B7534 /* RxCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -157,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E9D4A51F79550700BE3675 /* NeoCoordinator.framework in Frameworks */,
 				7484B97664915FBBC058FB27 /* Pods_RxCoordinator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
