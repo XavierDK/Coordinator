@@ -8,125 +8,54 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Nimble.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>Pods-Coordinator.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Pods-CoordinatorTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods-Demo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
+		</dict>
+		<key>Pods-NeoCoordinator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-RxCoordinator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>Pods-RxCoordinatorTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>11</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>2483CBADFFE2D3F7A03BE4A945EF9BAD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3D2318FFE329458EDAD10901AC8229E7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6640E1327D6711CFFB8F993253BFD46F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7B3A6B06C83A3BB2B9C1FCB017439BF1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>840FFFB9286F89F5DC3ABBFDC42E9C17</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A137F64650F1C5C4782CAE3096308824</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ABEACE6DD21A051D8ABA1755B32A8938</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B9448F647E55928D2F8AD44DB7B1C1E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD7C8BF89FE8053D0A2A2D88BB49CF07</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DFC6EE7E78383D0CDCC1FEEE4A135799</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

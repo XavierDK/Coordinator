@@ -1,0 +1,6 @@
+framework module Pods_NeoCoordinator {
+  umbrella header "Pods-NeoCoordinator-umbrella.h"
+
+  export *
+  module * { export * }
+}

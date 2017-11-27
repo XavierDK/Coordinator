@@ -24,7 +24,6 @@
 		25DA06A71F4B31E30019D87C /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F4F7A61F307F89007B7534 /* UINavigationController+Extension.swift */; };
 		25DA06A81F4B31E30019D87C /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255DD3781F2A399A003C7003 /* NavigationCoordinator.swift */; };
 		25DA06A91F4B31E30019D87C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255DD3701F2A3287003C7003 /* TabBarCoordinator.swift */; };
-		25DA06AB1F4B31E30019D87C /* Pods_Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFFCAFE082458454DCE32DC /* Pods_Coordinator.framework */; };
 		25DA06AD1F4B31E30019D87C /* Coordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 255DD3251F29D950003C7003 /* Coordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25E9D4A51F79550700BE3675 /* NeoCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DA06B31F4B31E30019D87C /* NeoCoordinator.framework */; };
 		25F4F78F1F307AE1007B7534 /* RxCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F4F7861F307AE1007B7534 /* RxCoordinator.framework */; };
@@ -36,6 +35,7 @@
 		50B2606DDC855749EF4E53FF /* Pods_RxCoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82763CA8B13EAD22294606B /* Pods_RxCoordinatorTests.framework */; };
 		7484B97664915FBBC058FB27 /* Pods_RxCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */; };
 		996180E5804577DD8C4B02B0 /* Pods_CoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73BDF580C9C48730106E3CB /* Pods_CoordinatorTests.framework */; };
+		BA5FB45E9BC1FABF39EA2A80 /* Pods_NeoCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAB67D06B792A0FD488FF65 /* Pods_NeoCoordinator.framework */; };
 		ECA749E3546906C30205596C /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9107A0DA7C1C08E5789B88F2 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +112,7 @@
 		25F4F7BE1F31D13A007B7534 /* AppCoordinator_iPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator_iPad.swift; sourceTree = "<group>"; };
 		25F4F7C01F31D2F4007B7534 /* SplitCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitCoordinator.swift; sourceTree = "<group>"; };
 		4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56FADEBD48F5E9A4257F8B9B /* Pods-NeoCoordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoCoordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeoCoordinator/Pods-NeoCoordinator.release.xcconfig"; sourceTree = "<group>"; };
 		5AFFCAFE082458454DCE32DC /* Pods_Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2EAC9B49F42255C20DDF98 /* Pods-Coordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coordinator/Pods-Coordinator.release.xcconfig"; sourceTree = "<group>"; };
 		60016F1FBA9A9E2DBFBFF3EB /* Pods-RxCoordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCoordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxCoordinator/Pods-RxCoordinator.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 		71456168B1E9E2F8E186DBA3 /* Pods-RxCoordinatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCoordinatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxCoordinatorTests/Pods-RxCoordinatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73A90B602C0A72491ABF3AC9 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		7DED20EB25AE178C05E7ED82 /* Pods-Coordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coordinator/Pods-Coordinator.debug.xcconfig"; sourceTree = "<group>"; };
+		8025F467006225B0C2C39068 /* Pods-NeoCoordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoCoordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeoCoordinator/Pods-NeoCoordinator.debug.xcconfig"; sourceTree = "<group>"; };
 		820C3255BCCD57ED76F3156F /* Pods-CoordinatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoordinatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoordinatorTests/Pods-CoordinatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		85DF0416788F844205FAEC82 /* Pods-CoordinatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoordinatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoordinatorTests/Pods-CoordinatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		9107A0DA7C1C08E5789B88F2 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 		AE680075E5A83106E4475506 /* Pods-RxCoordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCoordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxCoordinator/Pods-RxCoordinator.debug.xcconfig"; sourceTree = "<group>"; };
 		E077286047CCE9E111746410 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		E82763CA8B13EAD22294606B /* Pods_RxCoordinatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCoordinatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCAB67D06B792A0FD488FF65 /* Pods_NeoCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeoCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25DA06AB1F4B31E30019D87C /* Pods_Coordinator.framework in Frameworks */,
+				BA5FB45E9BC1FABF39EA2A80 /* Pods_NeoCoordinator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +291,7 @@
 				9107A0DA7C1C08E5789B88F2 /* Pods_Demo.framework */,
 				4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */,
 				E82763CA8B13EAD22294606B /* Pods_RxCoordinatorTests.framework */,
+				FCAB67D06B792A0FD488FF65 /* Pods_NeoCoordinator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -305,6 +309,8 @@
 				60016F1FBA9A9E2DBFBFF3EB /* Pods-RxCoordinator.release.xcconfig */,
 				71456168B1E9E2F8E186DBA3 /* Pods-RxCoordinatorTests.debug.xcconfig */,
 				67174225047BAA65071D137D /* Pods-RxCoordinatorTests.release.xcconfig */,
+				8025F467006225B0C2C39068 /* Pods-NeoCoordinator.debug.xcconfig */,
+				56FADEBD48F5E9A4257F8B9B /* Pods-NeoCoordinator.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -442,7 +448,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = PagesJaunes;
 				TargetAttributes = {
 					255DD32A1F29D950003C7003 = {
@@ -457,6 +463,7 @@
 					};
 					25DA06A01F4B31E30019D87C = {
 						DevelopmentTeam = 8XF24Z96S9;
+						LastSwiftMigration = 0910;
 					};
 					25F4F7851F307AE1007B7534 = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -557,9 +564,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -572,13 +586,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoordinatorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		25DA06A11F4B31E30019D87C /* [CP] Check Pods Manifest.lock */ = {
@@ -587,13 +604,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeoCoordinator-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		25DA06AF1F4B31E30019D87C /* [CP] Copy Pods Resources */ = {
@@ -608,7 +628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coordinator/Pods-Coordinator-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeoCoordinator/Pods-NeoCoordinator-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2BD49A9BE866B6389E605871 /* [CP] Copy Pods Resources */ = {
@@ -647,13 +667,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxCoordinatorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		42D7CEC0EA6995D98CF3961F /* [CP] Embed Pods Frameworks */ = {
@@ -662,9 +685,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxCoordinatorTests/Pods-RxCoordinatorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -677,13 +711,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80FC15C69E4A092F11F0DF11 /* [CP] Copy Pods Resources */ = {
@@ -707,9 +744,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CoordinatorTests/Pods-CoordinatorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -722,13 +764,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxCoordinator-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -827,7 +872,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -835,7 +882,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -881,7 +932,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -889,7 +942,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -980,7 +1037,7 @@
 		};
 		25DA06B11F4B31E30019D87C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DED20EB25AE178C05E7ED82 /* Pods-Coordinator.debug.xcconfig */;
+			baseConfigurationReference = 8025F467006225B0C2C39068 /* Pods-NeoCoordinator.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -997,13 +1054,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		25DA06B21F4B31E30019D87C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B2EAC9B49F42255C20DDF98 /* Pods-Coordinator.release.xcconfig */;
+			baseConfigurationReference = 56FADEBD48F5E9A4257F8B9B /* Pods-NeoCoordinator.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1019,7 +1077,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.Coordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
