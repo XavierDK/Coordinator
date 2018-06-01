@@ -38,8 +38,7 @@ public extension NavigationCoordinator {
     guard let controller = controller else {
       throw CoordinatorError.badImplementation("‼️ERROR‼️ : You must have initialized the controller in method `setup` for coordinator \(self)")
     }
-    
-    navigationController.tabBarItem = controller.tabBarItem
+        
     navigationController.pushViewController(controller, animated: true) { [weak self] in
       guard let strongSelf = self else { return }
       completion?(strongSelf)
