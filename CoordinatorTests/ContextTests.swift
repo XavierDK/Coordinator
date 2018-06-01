@@ -9,7 +9,7 @@
 import Quick
 import Nimble
 
-@testable import Coordinator
+@testable import NeoCoordinator
 
 final class ContextSpec: QuickSpec {
   

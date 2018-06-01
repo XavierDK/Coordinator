@@ -35,6 +35,8 @@
 		50B2606DDC855749EF4E53FF /* Pods_RxCoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82763CA8B13EAD22294606B /* Pods_RxCoordinatorTests.framework */; };
 		7484B97664915FBBC058FB27 /* Pods_RxCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E961CA22A763AD04BAF5166 /* Pods_RxCoordinator.framework */; };
 		996180E5804577DD8C4B02B0 /* Pods_CoordinatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73BDF580C9C48730106E3CB /* Pods_CoordinatorTests.framework */; };
+		B1DAAA3E20C1525C00DF4D26 /* NeoCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DA06B31F4B31E30019D87C /* NeoCoordinator.framework */; };
+		B1DAAA3F20C1526200DF4D26 /* NeoCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DA06B31F4B31E30019D87C /* NeoCoordinator.framework */; };
 		BA5FB45E9BC1FABF39EA2A80 /* Pods_NeoCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAB67D06B792A0FD488FF65 /* Pods_NeoCoordinator.framework */; };
 		ECA749E3546906C30205596C /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9107A0DA7C1C08E5789B88F2 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1DAAA3E20C1525C00DF4D26 /* NeoCoordinator.framework in Frameworks */,
 				996180E5804577DD8C4B02B0 /* Pods_CoordinatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1DAAA3F20C1526200DF4D26 /* NeoCoordinator.framework in Frameworks */,
 				25F4F78F1F307AE1007B7534 /* RxCoordinator.framework in Frameworks */,
 				50B2606DDC855749EF4E53FF /* Pods_RxCoordinatorTests.framework in Frameworks */,
 			);
@@ -448,7 +452,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = PagesJaunes;
 				TargetAttributes = {
 					255DD32A1F29D950003C7003 = {
@@ -876,6 +880,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -883,6 +888,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -936,6 +942,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -943,6 +950,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -985,7 +993,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.CoordinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -999,7 +1007,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.CoordinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1101,7 +1109,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1123,7 +1131,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.RxCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1137,7 +1145,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.RxCoordinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Debug;
@@ -1152,7 +1160,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PagesJaunes.RxCoordinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Release;
