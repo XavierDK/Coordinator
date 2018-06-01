@@ -30,7 +30,7 @@ public protocol Coordinator: class {
   var navigationController: UINavigationController { get }
   
   /// The optionnal parent coordinator
-  weak var parentCoordinator: Coordinator? { get }
+  var parentCoordinator: Coordinator? { get }
   
   // All the children of the coordinator are retained here.
   var childCoordinators: [Coordinator] { get set }
