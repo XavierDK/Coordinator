@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NeoCoordinator'
-  s.version          = '0.3.7'
+  s.version          = '0.3.9'
   s.summary          = 'A coordinator implementation to easilly use it.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ A coordinator implementation to easilly use it. A Coordinator is an object the e
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Coordinator/**/*'
+  s.source_files = 'Coordinator/**/*.{h,swift}'
   
   # s.resource_bundles = {
   #   'Coordinator' => ['Coordinator/Assets/*.png']
