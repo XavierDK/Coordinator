@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxCoordinator'
-  s.version          = '0.3.7'
+  s.version          = '0.3.9'
   s.summary          = 'A Rx wrapper on Coordinator.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ RxCoordinator provide some methods for Rx implementation.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'RxCoordinator/**/*'
+  s.source_files = 'RxCoordinator/**/*.{h,swift}'
   
   # s.resource_bundles = {
   #   'Coordinator' => ['RxCoordinator/Assets/*.png']
